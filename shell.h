@@ -11,22 +11,22 @@
 #include <limits.h>
 #include <fcntl.h>
 
-// for read/write buffers
+/*for read/write buffers*/
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
-// for command chaining
+/*for command chaining*/
 #define CMD_NORM      0
 #define CMD_OR        1
 #define CMD_AND       2
 #define CMD_CHAIN     3
 
-// for convert_number()
+/* for convert_number()*/
 #define CONVERT_LOWERCASE     1
 #define CONVERT_UNSIGNED      2
 
-// 1 if using system getline()
+/*1 if using system getline()*/
 #define USE_GETLINE 0
 #define USE_STRTOK 0
 
@@ -114,39 +114,39 @@ typedef struct builtin
 	int (*func)(info_t *);
 } builtin_table;
 
-// toem_shloop.c
+/*toem_shloop.c*/
 int hsh(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
-// toem_parser.c
+/*toem_parser.c*/
 int is_cmd(info_t *, char *);
 char *dup_chars(char *, int, int);
 char *find_path(info_t *, char *, char *);
 
-// loopsh.c
+/*loopsh.c*/
 int loopsh(char **);
 
-//toem_errors.c
+/*toem_errors.c*/
 void _eputs(char *);
 int _eputchar(char);
 int _putfd(char c, int fd);
 int _putsfd(char *str, int fd);
 
-//toem_string.c
+/*toem_string.c*/
 int _strlen(char *);
 int _strcmp(char *, char *);
 char *starts_with(const char *, const char *);
 char *_strcat(char *, char *);
 
-//toem string1.c
+/*toem string1.c*/
 char *_strcpy(char *, char *);
 char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 
-//toem_exits.c
+/*toem_exits.c*/
 char *_strncpy(char *, char *, int);
 char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
